@@ -79,7 +79,7 @@ def get_actives(user):
 def print_result(fishers):
     fishers = sorted(fishers, key=lambda x: x.active_score, reverse=True)
     contentMsg = ""
-    msg = "-------------------Today Mofihsh king------------------"
+    msg = "-------------------Today Mofish King------------------"
     contentMsg += msg
     contentMsg += "\n"
     logging.info(msg)
