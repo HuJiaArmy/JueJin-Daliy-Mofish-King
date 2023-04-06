@@ -8,7 +8,7 @@ on:
   #pull_request:
   #  branches: [ "main" ]
   schedule:
-    - cron: "00 08 * * *" # 北京时间下午16:00
+    - cron: "00 08 * * 1-5" # 北京时间每周一到周五下午16:00
   workflow_dispatch:
 
 permissions:
