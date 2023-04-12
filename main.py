@@ -51,6 +51,8 @@ def get_fishers():
 
 
 def calculation_activity(user, acion_list, has_more):
+    if acion_list is None:
+        return user, False
     for ac in acion_list:
         action = ac['action']
         time = ac['time']
