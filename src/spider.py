@@ -52,10 +52,10 @@ def publish_pin(content, cookie):
     url = "https://api.juejin.cn/content_api/v1/short_msg/publish"
 
     payload = json.dumps({
-        "content": "[7210002980895916043#挑战每日一条沸点#] \n " + content,
+        "content": "[7101489546776281124#今天沸点有什么好看的#]  \n " + content,
         "topic_id": "6824710203301167112",
         "sync_to_org": False,
-        "theme_id": "7210002980895916043"
+        "theme_id": "7101489546776281124"
     })
     headers = {
         'authority': 'api.juejin.cn',
