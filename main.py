@@ -75,7 +75,9 @@ def get_actives(user):
         except Exception as err:
             max_retry -= 1
             continue
-
+        if result.get("err_no") != 0:
+            max_retry -= 1
+            continue
         data = result.get("data")
         cursor = data.get("cursor")
         has_more = data.get("hasMore")
