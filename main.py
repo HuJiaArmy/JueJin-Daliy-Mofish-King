@@ -68,8 +68,14 @@ def get_actives(user):
     user_id = user.user_id
     has_more = True
     cursor = "0"
-    while has_more:
-        result = get_user_dynamic(user_id, cursor)
+    max_retry = 3
+    while has_more and max_retry > 0:
+        try:
+            result = get_user_dynamic(user_id, cursor)
+        except Exception as err:
+            max_retry -= 1
+            continue
+
         data = result.get("data")
         cursor = data.get("cursor")
         has_more = data.get("hasMore")
