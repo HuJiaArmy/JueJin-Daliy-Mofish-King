@@ -72,10 +72,10 @@ def get_actives(user):
     while has_more and max_retry > 0:
         try:
             result = get_user_dynamic(user_id, cursor)
-        except Exception as err:
+            if result.get("err_no") != 0:
             max_retry -= 1
             continue
-        if result.get("err_no") != 0:
+        except Exception as err:
             max_retry -= 1
             continue
         data = result.get("data")
